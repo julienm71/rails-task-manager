@@ -1,9 +1,15 @@
-<p>Task name: <%= @task.name %></p>
-<p>Task details: <%= @task.details %></p>
-<p><%= @task.checked %></p>
-
-<%= link_to "Edit task",  edit_task_path(@task) %>
-<%= link_to "Remove task", task_path(@task),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-<%= link_to "Back to index",  tasks_path %>
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header" style="color:black;">
+      <%= @task.name %>
+      </div>
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <p class="card-text"><%= @task.details %></p>
+      <%= link_to "Edit task",  edit_task_path(@task), :class => "btn btn-primary" %>
+    </div>
+    <div class="card-footer text-muted">
+      <i class="fa fa-history"></i> <%= link_to "Back to index",  tasks_path %>
+    </div>
+  </div>
+</div>

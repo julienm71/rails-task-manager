@@ -1,6 +1,21 @@
-<%= form_for @task do |f| %>
-<%= f.text_field :name %>
-<%= f.text_field :details %>
-<%= f.check_box :checked %>
-<%= f.submit %>
-<% end %>
+<div class="container">
+  <%= form_for @task do |f| %>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= f.label :name, 'TASK NAME' %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.label :details, 'TASK DETAILS' %>
+        <%= f.text_field :details, class: "form-control" %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.label :checked, 'CHECKED ?' %> <br>
+        <%= f.check_box :checked, class: "form-check-input" %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.submit class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

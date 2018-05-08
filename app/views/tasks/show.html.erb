@@ -1,0 +1,9 @@
+<p>Task name: <%= @task.name %></p>
+<p>Task details: <%= @task.details %></p>
+<p><%= @task.checked %></p>
+
+<%= link_to "Edit task",  edit_task_path(@task) %>
+<%= link_to "Remove task", task_path(@task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<%= link_to "Back to index",  tasks_path %>

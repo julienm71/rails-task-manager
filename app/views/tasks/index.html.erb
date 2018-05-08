@@ -1,0 +1,9 @@
+<h1>Tasks</h1>
+
+<%= link_to "Create new task", new_task_path %>
+<hr>
+<% @tasks.each do |task| %>
+  <h4><input type="checkbox" aria-label="Checkbox for following text input" <%= "checked" if task.checked %>> : <%= task.name %></h4>
+  <%= link_to "More details", task_path(task) %>
+  <hr>
+<% end %>
